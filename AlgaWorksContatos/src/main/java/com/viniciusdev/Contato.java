@@ -8,6 +8,14 @@ public class Contato implements Comparable<Contato>{
 	
 	private String telefone;
 	
+	public Contato(){}
+	
+	public Contato(String id, String nome, String telefone) {
+		this.id = id;
+		this.nome = nome;
+		this.telefone = telefone;
+	}
+	
 	public String getTelefone() {
 		return telefone;
 	}
