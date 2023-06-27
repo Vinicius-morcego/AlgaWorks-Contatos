@@ -44,7 +44,11 @@ public class Contato implements Comparable<Contato>{
 	public void setId(String id) {
 		this.id = id;
 	}
-
+	
+	public boolean isNovo() {
+		return id == null;
+	}
+	
 	@Override
 	public int compareTo(Contato contato) {
 		if(this.nome.compareTo(contato.getNome()) > 0) return -1;

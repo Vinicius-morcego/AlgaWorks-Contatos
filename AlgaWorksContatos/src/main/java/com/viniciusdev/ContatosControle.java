@@ -17,8 +17,8 @@ public class ContatosControle {
 					new Contato("1", "Joao", "+55 34 00000-0000"),
 					new Contato("2", "Maria Cecilia", "+55 34 11111-1111"),
 					new Contato("3", "Cristiane", "+55 34 33333-3333"),
-					new Contato("4", "Vinicius", "+55 34 44444-4444")
-				));
+					new Contato("4", "Vinicius", "+55 34 44444-4444"))
+				);
 		
 	}
 	
@@ -33,8 +33,11 @@ public class ContatosControle {
 		modelAndView.addObject("contatos", LISTA_CONTATOS);
 		return modelAndView;
 	}
+	
 	@GetMapping("/contatos/novo")
-	public String novo() {
-		return "formulario";
+	public ModelAndView novo() {
+		ModelAndView modelAndView = new ModelAndView("formulario");
+		modelAndView.addObject("contato", new Contato());
+		return modelAndView;
 	}
 }
