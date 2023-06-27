@@ -74,10 +74,9 @@ public class ContatosControle {
 	}
 	
 	@DeleteMapping("/contatos/{id}")
-	public String remover(Contato contato) {
-		Integer indice = procurarIndiceContato(contato.getId());
-		Contato contatoAtual = LISTA_CONTATOS.get(indice);
-		LISTA_CONTATOS.remove(contatoAtual);
+	public String remover(@PathVariable String id) {		
+		Contato contato = procurarContato(id);
+		LISTA_CONTATOS.remove(contato);
 		
 		return "redirect:/contatos";
 		
